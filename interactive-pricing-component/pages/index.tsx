@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import PricingComponent from '../components/PricingComponent'
+import DarkModeToggle from '../components/DarkModeToggle'
 
 const Home: NextPage = () => {
   return (
@@ -11,6 +12,8 @@ const Home: NextPage = () => {
         <meta name="description" content="Interactive pricing component challenge" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <DarkModeToggle />
 
       <main className={styles.main}>
         <h1 className={styles.title}>

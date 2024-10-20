@@ -1,13 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
 
+:root {
+  --bg-color: hsl(230, 100%, 99%);
+  --text-color: hsl(227, 35%, 25%);
+  --secondary-text-color: hsl(225, 20%, 60%);
+  --component-bg-color: #ffffff;
+  --cta-bg-color: hsl(227, 35%, 25%);
+  --cta-text-color: hsl(226, 100%, 87%);
+  --cta-hover-bg-color: hsl(227, 35%, 40%);
+  --slider-bg-color: hsl(224, 65%, 95%);
+  --switch-bg-color: hsl(223, 50%, 87%);
+  --discount-bg-color: hsl(14, 92%, 95%);
+  --discount-text-color: hsl(15, 100%, 70%);
+}
+
+.dark-mode {
+  --bg-color: hsl(230, 17%, 14%);
+  --text-color: hsl(0, 0%, 100%);
+  --secondary-text-color: hsl(228, 34%, 66%);
+  --component-bg-color: hsl(228, 28%, 20%);
+  --cta-bg-color: hsl(176, 68%, 64%);
+  --cta-text-color: hsl(230, 17%, 14%);
+  --cta-hover-bg-color: hsl(176, 68%, 75%);
+  --slider-bg-color: hsl(223, 50%, 87%);
+  --switch-bg-color: hsl(223, 50%, 87%);
+  --discount-bg-color: hsl(14, 92%, 15%);
+  --discount-text-color: hsl(15, 100%, 70%);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: 'Manrope', sans-serif;
-  background-color: hsl(230, 100%, 99%);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {
   box-sizing: border-box;
+}
+
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--component-bg-color);
+  color: var(--text-color);
 }

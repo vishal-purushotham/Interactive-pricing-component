@@ -51,7 +51,13 @@ export default function PricingComponent() {
           value={tierIndex}
           onChange={handleSliderChange}
           className={styles.slider}
-          style={{ background: `linear-gradient(to right, hsl(174, 86%, 45%) 0%, hsl(174, 86%, 45%) ${sliderPercentage}%, hsl(224, 65%, 95%) ${sliderPercentage}%, hsl(224, 65%, 95%) 100%)` }}
+          style={{ 
+            background: `linear-gradient(to right, 
+              hsl(174, 86%, 45%) 0%, 
+              hsl(174, 86%, 45%) ${sliderPercentage}%, 
+              var(--slider-bg-color) ${sliderPercentage}%, 
+              var(--slider-bg-color) 100%)`
+          }}
         />
       </div>
       <div className={styles.price}>
