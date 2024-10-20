@@ -26,7 +26,7 @@ const Home: NextPage = () => {
       <footer className={styles.footer}>
         <div className={styles.attribution}>
           Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
-          Coded by <a href="#">Your Name Here</a>.
+          Coded by <a href="#">Vishal Purushotham</a>.
         </div>
       </footer>
     </div>
