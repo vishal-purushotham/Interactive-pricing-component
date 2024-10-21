@@ -90,9 +90,9 @@ export default function PricingComponent() {
         <span className={styles.discount}>25% discount</span>
       </div>
       <ul className={styles.features}>
-        <li>Unlimited websites</li>
-        <li>100% data ownership</li>
-        <li>Email reports</li>
+        <li>✔ Unlimited websites</li>
+        <li>✔ 100% data ownership</li>
+        <li>✔ Email reports</li>
       </ul>
       <div className={styles.emailContainer}>
         <input
