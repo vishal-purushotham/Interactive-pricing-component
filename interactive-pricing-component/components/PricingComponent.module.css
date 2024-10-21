@@ -70,19 +70,21 @@
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
+  gap: 1rem;
 }
 
-.billingToggle span {
-  margin: 0 0.5rem;
+.billingOption {
   color: var(--secondary-text-color);
-  font-size: 15px;
+  font-size: 14px;
+  white-space: nowrap;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 32px;
+  width: 46px;
+  height: 24px;
+  flex-shrink: 0;
 }
 
 .switch input {
@@ -91,46 +93,45 @@
   height: 0;
 }
 
-.switch .slider {
+.switchSlider {
   position: absolute;
   cursor: pointer;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: var(--switch-bg-color);
+  background-color: #ccc;
   transition: .4s;
   border-radius: 34px;
-  margin: 0;
 }
 
-.switch .slider:before {
+.switchSlider:before {
   position: absolute;
   content: "";
-  height: 24px;
-  width: 24px;
-  left: 4px;
-  bottom: 4px;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
   background-color: white;
   transition: .4s;
   border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked + .switchSlider {
   background-color: hsl(174, 86%, 45%);
 }
 
-input:checked + .slider:before {
-  transform: translateX(26px);
+input:checked + .switchSlider:before {
+  transform: translateX(22px);
 }
 
 .discount {
-  background-color: var(--discount-bg-color);
-  color: var(--discount-text-color);
+  background-color: hsl(14, 92%, 95%);
+  color: hsl(15, 100%, 70%);
   padding: 2px 8px;
   border-radius: 10px;
   font-size: 0.8em;
-  margin-left: 10px;
+  white-space: nowrap;
 }
 
 .features {
@@ -143,6 +144,35 @@ input:checked + .slider:before {
   margin: 0.5rem 0;
   color: var(--secondary-text-color);
   font-size: 15px;
+}
+
+.emailContainer {
+  margin-bottom: 1rem;
+}
+
+.emailInput {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid var(--secondary-text-color);
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.emailInput:focus {
+  border-color: hsl(174, 86%, 45%);
+}
+
+.invalidEmail {
+  border-color: hsl(0, 100%, 50%);
+}
+
+.errorMessage {
+  color: hsl(0, 100%, 50%);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
 }
 
 .cta {
@@ -161,6 +191,11 @@ input:checked + .slider:before {
   background: var(--cta-hover-bg-color);
 }
 
+.cta:disabled {
+  background: var(--secondary-text-color);
+  cursor: not-allowed;
+}
+
 @media (min-width: 1440px) {
   .pricing {
     max-width: 1440px;
@@ -174,7 +209,7 @@ input:checked + .slider:before {
   }
   
   .billingToggle {
-    flex-direction: column;
+    flex-wrap: wrap;
   }
   
   .discount {

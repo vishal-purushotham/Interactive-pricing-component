@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import styles from './PricingComponent.module.css';
 
+// Email validation regex
+const validateEmail = (email: string) => {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+};
+
 export default function PricingComponent() {
   const [billing, setBilling] = useState<'monthly' | 'yearly'>('monthly');
-  const [tierIndex, setTierIndex] = useState<number>(2); // Default to 100K pageviews
+  const [tierIndex, setTierIndex] = useState<number>(2);
+  const [email, setEmail] = useState<string>('');
+  const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
 
   const pricingTiers = [
     { pageviews: 10000, price: 8 },
@@ -19,6 +27,12 @@ export default function PricingComponent() {
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTierIndex(Number(event.target.value));
+  };
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newEmail = event.target.value;
+    setEmail(newEmail);
+    setIsEmailValid(validateEmail(newEmail));
   };
 
   const getPrice = () => {
@@ -51,13 +65,7 @@ export default function PricingComponent() {
           value={tierIndex}
           onChange={handleSliderChange}
           className={styles.slider}
-          style={{ 
-            background: `linear-gradient(to right, 
-              hsl(174, 86%, 45%) 0%, 
-              hsl(174, 86%, 45%) ${sliderPercentage}%, 
-              var(--slider-bg-color) ${sliderPercentage}%, 
-              var(--slider-bg-color) 100%)`
-          }}
+          style={{ background: `linear-gradient(to right, hsl(174, 86%, 45%) 0%, hsl(174, 86%, 45%) ${sliderPercentage}%, hsl(224, 65%, 95%) ${sliderPercentage}%, hsl(224, 65%, 95%) 100%)` }}
         />
       </div>
       <div className={styles.price}>
@@ -69,12 +77,16 @@ export default function PricingComponent() {
         </div>
       )}
       <div className={styles.billingToggle}>
-        <span>Monthly Billing</span>
+        <span className={styles.billingOption}>Monthly Billing</span>
         <label className={styles.switch}>
-          <input type="checkbox" checked={billing === 'yearly'} onChange={handleBillingChange} />
+          <input 
+            type="checkbox" 
+            checked={billing === 'yearly'} 
+            onChange={handleBillingChange} 
+          />
           <span className={styles.switchSlider}></span>
         </label>
-        <span>Yearly Billing</span>
+        <span className={styles.billingOption}>Yearly Billing</span>
         <span className={styles.discount}>25% discount</span>
       </div>
       <ul className={styles.features}>
@@ -82,7 +94,17 @@ export default function PricingComponent() {
         <li>100% data ownership</li>
         <li>Email reports</li>
       </ul>
-      <button className={styles.cta}>Start my trial</button>
+      <div className={styles.emailContainer}>
+        <input
+          type="email"
+          value={email}
+          onChange={handleEmailChange}
+          placeholder="Enter your email"
+          className={`${styles.emailInput} ${!isEmailValid && email ? styles.invalidEmail : ''}`}
+        />
+        {!isEmailValid && email && <span className={styles.errorMessage}>Please enter a valid email address</span>}
+      </div>
+      <button className={styles.cta} disabled={!isEmailValid || !email}>Start my trial</button>
     </div>
   );
 }
