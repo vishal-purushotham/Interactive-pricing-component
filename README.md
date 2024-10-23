@@ -66,4 +66,4 @@ In future projects, I plan to focus on the following areas:
 ## Author
 
 - Frontend Mentor - [@vishal-purushotham](https://www.frontendmentor.io/profile/vishal-purushotham)
-- LinkedIn- [Vishal Purushotham](www.linkedin.com/in/vishal-purushotham-15a2b3258)
+- LinkedIn- [Vishal Purushotham](https://www.linkedin.com/in/vishal-purushotham-15a2b3258)
