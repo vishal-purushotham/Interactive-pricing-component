@@ -30,7 +30,10 @@ Users should be able to:
 
 ### Screenshot
 
-![](interactive-pricing-component-main/images/Screenshot 2024-10-23 114325.png)
+![](https://github.com/vishal-purushotham/Interactive-pricing-component/blob/main/interactive-pricing-component-main/images/Screenshot%202024-10-23%20114325.png?raw=true)
+![](https://github.com/vishal-purushotham/Interactive-pricing-component/blob/main/interactive-pricing-component-main/images/Screenshot%202024-10-23%20114325.png?raw=true)
+
+
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
