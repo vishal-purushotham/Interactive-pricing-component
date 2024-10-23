@@ -205,14 +205,44 @@ input:checked + .switchSlider:before {
 
 @media (max-width: 375px) {
   .pricing {
+    width: 100%;
     padding: 1rem;
   }
-  
+
   .billingToggle {
     flex-wrap: wrap;
+    justify-content: center;
   }
-  
+
   .discount {
     margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  .features {
+    padding: 0;
+    list-style: none;
+  }
+
+  .features li {
+    margin: 5px 0;
+  }
+
+  .emailContainer {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .emailContainer input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .slider {
+    width: 100%;
   }
 }
